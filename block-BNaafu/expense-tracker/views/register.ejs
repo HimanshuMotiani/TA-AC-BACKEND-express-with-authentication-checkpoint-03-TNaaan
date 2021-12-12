@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <% include partials/header %>
+    <header>
+        <h1 class="h1-regis">Registration Form</h1>
+    </header>
+    <main>
+        <section>
+            <form method="POST" action="/users/register" class="form-control">
+                <%if(error){%>
+                 <p class="error"><%=error%></p>
+                <%}%>
+                <div class="field-gap">
+                    <label>Name</label>
+                    <input class="field-control" type="text" name="name" placeholder="Enter name">
+                </div>
+                <div class="field-gap">
+                    <label>Email</label>
+                    <input class="field-control" type="email" name="email" placeholder="Enter email">
+                </div>
+                <div class="field-gap">
+                    <label>Password</label>
+                    <input class="field-control" type="text" name="password" placeholder="Enter password">
+                </div>
+                <div class="field-gap">
+                    <label>Phone</label>
+                    <input class="field-control" type="text" name="phone" placeholder="Enter phone No">
+                </div>
+                <div class="field-gap">
+                    <label>Age</label>
+                    <input class="field-control" type="text" name="age" placeholder="Enter age">
+                </div>
+                <div class="field-gap">
+                    <label>Country</label>
+                    <input class="field-control" type="text" name="country" placeholder="Enter country">
+                </div>
+                <div class="field-gap center">
+                    <input class="btn" type="submit" value="Submit">
+                </div>
+            </form>
+        </section>
+    </main> 
+    <% include partials/footer %> 
+</body>
+</html>
