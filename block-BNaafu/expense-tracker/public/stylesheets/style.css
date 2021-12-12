@@ -1,0 +1,247 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.container{
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.center{
+  text-align: center;
+}
+.header{
+  padding: 1.4rem 0;
+  background-color: sandybrown;
+}
+.login-button{
+  background-color: transparent;
+  color: yellow;
+  border: none;
+  font-size: 1.6rem;
+  margin-right: 1rem;
+}
+.heading{
+  font-size: 3rem;
+    color: blue;
+}
+.h2-heading{
+  font-size: 5rem;
+  text-align: center;
+  margin: 10rem 0;
+  color: blue;
+}
+.content{
+  width: 1160px;
+  margin: 0 auto;
+}
+.footer{
+  background-color: sandybrown;
+    /* margin: 0 auto; */
+    padding: 20px;
+    font-size: 1.6rem;
+    color: white;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+.h1-regis{
+  text-align: center;
+    font-size: 3rem;
+    margin: 2rem 0;
+}
+.form-control{
+  border: 0.2rem solid grey;
+  margin: 0 auto;
+  /* text-align: center; */
+  width: 39%;
+}
+.field-gap{
+  margin: 1rem;
+}
+label{
+  display: block;
+    margin: 0.3rem 0;
+}
+.field-control{
+  font-size: 1.3rem;
+  width: 80%;
+  /* border: none; */
+  outline: none;
+  color: grey;
+}
+.btn{
+  font-size: 1.2rem;
+    color: red;
+    background-color: black;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+}
+.error{
+  color: red;
+}
+.g-button{
+  display: block;
+  margin: 1rem;
+}
+.button{
+  width: 60%;
+  font-size: 1.6rem;
+  padding: 0.6rem;
+  background: coral;
+  color: white;
+}
+.g-div{
+  text-align: center;
+    border: 3px solid grey;
+    width: 35%;
+    padding: 2rem;
+    margin: 2rem auto;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero{
+  margin: 2rem 0;
+}
+.date-form{
+  border: 1px solid gray;
+  padding: 1.4rem;
+  text-align: center;
+}
+.date-field{
+  font-size: 1.2rem;
+  outline: none;
+  font-weight: 200;
+  margin-right: 0.6rem;
+}
+.margin{
+  margin: 1rem 0;
+}
+h4{
+  font-size: 1.6rem;
+    margin: 1.2rem 0;
+    text-align: center;
+}
+.find-date{
+  font-size: 1.2rem;
+  padding: 0.4rem 3rem;
+  color: orange;
+}
+a{
+  margin: 0 0.6rem;
+}
+.btn{
+  font-size: 1.2rem;
+  color: white;
+  background: red;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+}
+.color{
+  background-color: green;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  border-collapse: collapse;
+}
+td[colspan="4"] {
+  text-align: center;
+}
+.form-common{
+  text-align: center;
+  border: 1px solid grey;
+  padding: 2rem;
+  margin: 0 ap;
+  margin: 0 auto;
+  width: 30%;
+}
+.h5-text{
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin: 3rem 0;
+}
+.field-form{
+  width: 85%;
+  font-size: 1.6rem;
+  margin: 0.6rem;
+    /* text-align: left; */
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+

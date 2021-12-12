@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <% include partials/header %>
+    <header>
+        <h1 class="h1-regis">Login Form</h1>
+    </header>
+    <main>
+        <section>
+            <form method="POST" action="/users/login" class="form-control">
+                <div class="field-gap">
+                    <label>Email</label>
+                    <input class="field-control" type="email" name="email" placeholder="Enter email">
+                </div>
+                <div class="field-gap">
+                    <label>Password</label>
+                    <input class="field-control" type="text" name="password" placeholder="Enter password">
+                </div>
+                <div class="field-gap center">
+                    <input class="btn" type="submit" value="Submit">
+                </div>
+            </form>
+            <div class="g-div">
+                <a class="g-button" href="/auth/google">
+                <button class="button">Sign In with Google</button>
+                </a>
+                <a class="g-button" href="/auth/github">
+                    <button class="button">Sign In with Github</button>
+                </a>
+            </div>
+        </section>
+    </main> 
+    <% include partials/footer %> 
+</body>
+</html>
