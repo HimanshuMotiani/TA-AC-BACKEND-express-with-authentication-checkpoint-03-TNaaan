@@ -4,12 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require("mongoose")
-var session = require("express-session")
 var MongoStore = require("connect-mongo")
 var flash = require("connect-flash")
 var passport = require("passport")
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var GitHubStrategy = require('passport-github').Strategy;
+var auth  = require("./middlewares/auth")
+var session = require("express-session")
+var moment = require("moment")
 
 require("dotenv").config();
 require('./modules/passport')
@@ -37,7 +39,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  secret:"abc",
+  secret:process.env.SECRET,
   saveUninitialized:false,
   resave:false,
   store:MongoStore.create({mongoUrl:"mongodb://localhost/expense-tracker"})
@@ -46,13 +48,14 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
+
 app.use(flash())
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/incomes', incomesRouter);
 app.use('/expenses', expensesRouter);
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
