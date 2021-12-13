@@ -1,75 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+
     <title>Document</title>
 </head>
+
 <body>
     <% include partials/header %>
-    <main>
-        <section class="container">
-            <div class="hero flex">
-            <form method="POST" action="" class="date-form">
-               <input class="date-field" type="date" name="start_date" placeholder="Enter Start Date"> 
-               <input class="date-field" type="date" name="end_date" placeholder="Enter End Date"> 
-               <div class="margin">
-                   <input class="find-date" type="submit" value="Find By Date">
-               </div>
-            </form>
-            <div>
-                <h4>Sort By</h4>
-                <a href="">
-                    <button class="btn">Income</button>
-                </a>
-                <a href="">
-                    <button class="btn">Expense</button>
-                </a>
-                <a href="">
-                    <button class="btn">Income And Expense</button>
-                </a>
-            </div>
-            <div>
-                <a href="/expenses/new">
-                    <button class="btn color">Add Expense</button>
-                </a>
-                <a href="/incomes/new">
-                    <button class="btn color">Add Income</button>
-                </a>
-            </div>
-        </div>
-        </section>
-        <section class="container">
-            <table>
-                <tr>
-                    <th>
-                        Date
-                    </th>
-                    <th>
-                        Exp/Inc
-                    </th>
-                    <th>
-                        Category
-                    </th>
-                    <th>
-                        Amount
-                    </th>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        Savings
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        Savings
-                    </td>
-                </tr>
-            </table>
-        </section>
-    </main>
-    <% include partials/footer %>
+        <main>
+            <section class="container">
+                <div class="hero flex">
+                    <form method="POST" action="/dashboard/sortByDates" class="date-form">
+                        <input class="date-field" type="date" name="start_date" placeholder="Enter Start Date">
+                        <input class="date-field" type="date" name="end_date" placeholder="Enter End Date">
+                        <div class="margin">
+                            <input class="find-date" type="submit" value="Find By Date">
+                        </div>
+                    </form>
+                    <div>
+                        <h4>Sort By</h4>
+                        <a href="/dashboard/sortByIncome">
+                            <button class="btn">Income</button>
+                        </a>
+                        <a href="/dashboard/sortByExpense">
+                            <button class="btn">Expense</button>
+                        </a>
+                        <a href="/dashboard">
+                            <button class="btn">Income And Expense</button>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/expenses">
+                            <button class="btn color">Add Expense</button>
+                        </a>
+                        <a href="/incomes">
+                            <button class="btn color">Add Income</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="container">
+                <table>
+                    <tr>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                            Exp/Inc
+                        </th>
+                        <th>
+                            Category
+                        </th>
+                        <th>
+                            Amount
+                        </th>
+                    </tr>
+                    <%summary.forEach(ele=>{%>
+                        <tr>
+
+                            <td>
+                                <%=moment(ele.date).format('DD/MM/YYYY') %>
+                            </td>
+                            <td>
+                                <%=ele.type%>
+                            </td>
+                            <td>
+                                <%=ele.category%>
+                            </td>
+                            <td>
+                                <%=ele.amount%>
+                            </td>
+
+                        </tr>
+                        <%})%>
+                            <tr>
+                                <td colspan="4">
+                                    <%=savings%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    Savings
+                                </td>
+                            </tr>
+                </table>
+            </section>
+        </main>
+        <% include partials/footer %>
 </body>
+
 </html>

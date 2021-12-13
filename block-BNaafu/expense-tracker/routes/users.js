@@ -49,7 +49,7 @@ router.post('/login', function (req, res, next) {
         req.flash('error', 'Entered wrong password');
         return res.redirect("/users/login")
       }
-    req.body.user = user.id
+    req.session.userId = user.id;
     res.redirect("/dashboard")
     })
   })

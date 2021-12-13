@@ -18,7 +18,7 @@ router.get('/auth/google',
 router.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/failure' }),
   function (req, res) {
-    res.redirect('/users/dashboard');
+    res.redirect('/dashboard');
 });
 router.get('/auth/github', passport.authenticate('github'));
 
