@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <% include partials/header %>
+    <main>
+<h5 class="h5-text">ADD EXPENSE</h5>
+        <section>
+            <form method="POST" action="/expenses" class="form-common">
+                <div>
+                    <input class="field-form" type="text" name="category" placeholder="Enter category">
+                </div>
+                <div>
+                    <input type="number" class="field-form" name="amount" placeholder="Enter amout">
+                </div>
+                <div>
+                    <input type="date" class="field-form" name="date" placeholder="Enter date">
+                </div>
+                <div>
+                    <input type="submit" class="btn" value="Add">
+                </div>
+            </form>
+        </section>
+    </main>
+    <% include partials/footer %>
+</body>
+</html>
