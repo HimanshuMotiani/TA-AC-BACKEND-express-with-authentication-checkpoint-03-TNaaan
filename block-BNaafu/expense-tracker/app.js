@@ -50,7 +50,7 @@ app.use(passport.session())
 
 
 app.use(flash())
-
+app.use(auth.userInfo)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/dashboard', dashboardRouter);
