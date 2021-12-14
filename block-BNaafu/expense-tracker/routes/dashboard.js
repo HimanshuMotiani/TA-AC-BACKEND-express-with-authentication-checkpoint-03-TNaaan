@@ -11,17 +11,11 @@ router.get("/",(req,res)=>{
     var expenseTotal = 0;
     var summarySort;
     var id;
-    if(!req.session.userId){
-     id = req.session.passport.user
-    }
-    else{
-        id = req.session.userId
-    }
-    Income.find({userId:id},(err,income)=>{
+    Income.find({userId:req.user.id},(err,income)=>{
        income.map(item=>{
            incomeTotal = incomeTotal + item.amount
        })
-        Expense.find({userId:id},(err,expense) =>{
+        Expense.find({userId:req.user.id},(err,expense) =>{
             expense.map(item=>{
                 expenseTotal = expenseTotal + item.amount
         })
@@ -45,17 +39,11 @@ router.get("/sortByIncome",(req,res)=>{
     var expenseTotal = 0;
     var summarySort;
     var id;
-    if(!req.session.userId){
-     id = req.session.passport.user
-    }
-    else{
-        id = req.session.userId
-    }
-    Income.find({userId:id},(err,income)=>{
+    Income.find({userId:req.user.id},(err,income)=>{
        income.map(item=>{
            incomeTotal = incomeTotal + item.amount
        })
-        Expense.find({userId:id},(err,expense) =>{
+        Expense.find({userId:req.user.id},(err,expense) =>{
             expense.map(item=>{
                 expenseTotal = expenseTotal + item.amount
         })
@@ -77,18 +65,11 @@ router.get("/sortByExpense",(req,res)=>{
     var savings = 0;
     var incomeTotal = 0;
     var expenseTotal = 0;
-    var id;
-    if(!req.session.userId){
-     id = req.session.passport.user
-    }
-    else{
-        id = req.session.userId
-    }
-    Income.find({userId:id},(err,income)=>{
+    Income.find({userId:req.user.id},(err,income)=>{
        income.map(item=>{
            incomeTotal = incomeTotal + item.amount
        })
-        Expense.find({userId:id},(err,expense) =>{
+        Expense.find({userId:req.user.id},(err,expense) =>{
             expense.map(item=>{
                 expenseTotal = expenseTotal + item.amount
         })
@@ -110,13 +91,12 @@ router.post("/sortByDates", (req, res) => {
     var savings = 0;
     var incomeTotal = 0;
     var expenseTotal = 0;
-    console.log(req.body, "sort");
-    var su;
-    Expense.find({ date: { $gte: req.body.start_date, $lt: req.body.end_date } }, (err, expense) => {
+    var summary;
+    Expense.find({userId:req.user.id, date: { $gte: req.body.start_date, $lt: req.body.end_date } }, (err, expense) => {
         expense.map(item => {
             expenseTotal = expenseTotal + item.amount
         })
-        Income.find({ date: { $gte: req.body.start_date, $lte: req.body.end_date } }, (err, income) => {
+        Income.find({userId:req.user.id, date: { $gte: req.body.start_date, $lt: req.body.end_date } }, (err, income) => {
             income.map(item => {
                 incomeTotal = incomeTotal + item.amount
             })

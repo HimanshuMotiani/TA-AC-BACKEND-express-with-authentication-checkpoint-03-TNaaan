@@ -9,7 +9,13 @@
 <body>
     <header class="header">
         <div class="container flex">
+        <% if(user) { %>
         <h1 class="heading">Expense Tracker</h1>
+        <a href="/users/logout">
+            <button class="login-button">Logout</button>
+        </a>
+        <% } else{ %>
+            <h1 class="heading">Expense Tracker</h1>
         <div>
         <a href="/users/login">
             <button class="login-button">Login</button>
@@ -17,10 +23,9 @@
         <a href="/users/register">
             <button class="login-button">Sign Up</button>
         </a>
-        <a href="/users/logout">
-            <button class="login-button">Logout</button>
-        </a>
+        
     </div>
+    <% } %>
         </div>
     </header>
 </div>

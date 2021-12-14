@@ -36,7 +36,6 @@ passport.use(
         callbackURL: '/auth/github/callback',
       },
       (accessToken, refreshToken, profile, done) => {
-        console.log(profile);
         var profileData = {
           name: profile.displayName,
           username: profile.username,
